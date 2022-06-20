@@ -1,0 +1,15 @@
+<div class="card">
+    <img class="card-img-top" (error)="handleMissingImage($event)" src={{Movies.image}}>
+    <div class="card-block mb-2 ml-2 mr-2">
+        <h4 class="card-title">{{Movies.name}}</h4>
+        <div class="card-text">
+            <p>
+                {{Movies.description}}
+            </p>
+        </div>
+    </div>
+    <div class="card-btns mb-1">
+        <button (click)="onClick(Movies.id);" class="btn btn-danger me-3">Delete</button>
+        <button [routerLink]="['/MoviesUpdate',Movies.id]" class="btn btn-success">Update</button>
+    </div>
+</div>

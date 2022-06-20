@@ -1,0 +1,19 @@
+.navbar-global {
+    background: rgb(2, 0, 36);
+    /* background: linear-gradient(90deg, rgba(9, 9, 121, 1) 0%, #1568C1 45%, rgba(0, 212, 255, 1) 100%); */
+}
+
+.navbar-global .navbar-brand {
+    color: white;
+    font-size: 25px;
+}
+
+.navbar-global .navbar-brand:hover {
+    color: red;
+}
+
+.d-flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}

@@ -1,0 +1,41 @@
+
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.logo {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.logo-img {
+    width: 350px;
+}
+
+.login-form {
+    width: 400px;
+    display: grid;
+    row-gap: 10px;
+    font-size: 25px;
+}
+
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+.submit-btns {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.btn-black {
+    background-color: #000 !important;
+    color: #fff;
+}

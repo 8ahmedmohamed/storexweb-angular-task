@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="logo">
+    <img class="card-img-top logo-img" (error)="handleMissingImage($event)" src={{movies.image}}>
+  </div>
+
+  <form #editForm="ngForm" id="editForm" class="login-form">
+    <div class="form-group">
+      <label for="Name">Movie Name</label>
+      <input type="text" name="name" [(ngModel)]="movies.name" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label for="Name">Image Url</label>
+      <input id="file" name="image" [(ngModel)]="movies.image" type="text" class="form-control" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <label name="" for="Description">Description</label>
+      <textarea name="description" [(ngModel)]="movies.description" id="" cols="30" rows="10"
+        placeholder="Description"></textarea>
+    </div>
+    <hr>
+    <div class="submit-btns">
+        <button (click)="updateMovie(movies.id);" class="btn btn-black me-3">Update</button>
+        <button class="btn btn-danger" [routerLink]="['/Movies']">Cancel</button>
+    </div>
+  </form>
+</div>

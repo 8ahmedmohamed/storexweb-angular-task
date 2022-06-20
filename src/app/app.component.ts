@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './_Service/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Task';
+  constructor(public authService:AuthService){
+
+  }
+  loggedIn() {
+    return this.authService.loggedIn();
+  }
+  Logout(){
+    localStorage.removeItem('token');
+  }
 }

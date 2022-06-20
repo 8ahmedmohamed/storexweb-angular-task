@@ -1,0 +1,36 @@
+<div class="main">
+
+    <form (ngSubmit)="createmove();" [formGroup]="movieForm">
+      <div class="col-md-12 d-flex justify-content-center">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Movie Name</label>
+              <input formControlName="name" type="name" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="form-group">
+              <label for="">Image</label>
+              <input formControlName="image" name="image" type="file" class="form-control" id="">
+            </div>
+            <div class="form-group mb-4">
+              <label for="">Description</label>
+              <textarea formControlName="description" name="description" type="textarea" class="form-control"
+                id=""></textarea>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label for="exampleCheck1">Movie Category</label>
+              <input formControlName="category_id" name="category_id" type="text" class="form-control" id="exampleCheck1">
+            </div>
+            <div class="form-group">
+    
+            </div>
+          </div>
+          <button [disabled]="!movieForm.valid" [routerLink]="['/Movies']" type="submit"
+            class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+</div>
+

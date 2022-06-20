@@ -1,0 +1,15 @@
+
+<div class="container main">
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <button [routerLink]="['/Movies',45]" value="2" class="btn btn-danger">Fantasy</button>
+            <button [routerLink]="['/Movies',46]" value="19" class="btn btn-primary">Action</button>
+        </div>
+      </div>
+    <div class="row">
+        <div *ngFor="let item of movies" class="col-3 mt-4 mb-2 ml-2 mr-2">
+            <app-movies-card [Movies]="item" (IdDeleted)="addItem($event)"></app-movies-card>
+        </div>
+    </div>
+</div>
