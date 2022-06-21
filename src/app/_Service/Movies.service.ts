@@ -82,16 +82,14 @@ export class MoviesService {
 
 
   //create new Move
-  createmovie(movie: Movie) {
+  createmovie(movie:FormData){
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
+      'Authorization': `Bearer ${localStorage.getItem('token')}`,
     });
-    return this.http.post(`${this.baseUrl}api/movies`, movie, { headers: headers }).subscribe(
-      () => { this.aletfiy.success("Movie Created Success") },
-      error => { this.aletfiy.error("Movie Created Faild") }
-
+    return this.http.post(`${this.baseUrl}api/movies`,movie,{headers:headers}).subscribe(
+      ()=>{this.aletfiy.success("Movie Created Success")},
+      error=>{this.aletfiy.error("Movie Created Faild")} 
     )
-  }
+   }
 
 }
