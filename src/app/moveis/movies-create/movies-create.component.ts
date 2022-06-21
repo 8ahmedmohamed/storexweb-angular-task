@@ -12,6 +12,7 @@ import { MoviesService } from 'src/app/_Service/Movies.service';
 export class MoviesCreateComponent implements OnInit {
   movieForm: FormGroup;
   movie: Movie;
+  formdata:any = new FormData();
   constructor(private fb: FormBuilder,public movieService:MoviesService,private router:Router) { }
 
   ngOnInit(): void {
