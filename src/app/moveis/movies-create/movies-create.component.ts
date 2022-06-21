@@ -27,11 +27,22 @@ export class MoviesCreateComponent implements OnInit {
     });
   }
 
-  createmove(){
+  onFileChange(event:any) {
+    if (event.target.files && event.target.files.length) {
+        const file = event.target.files[0];
+           this.movieForm.patchValue({
+              image: file
+      });
+    }
+  }
+  public createmove(){
     if (this.movieForm.valid) {
-      this.movie = Object.assign({}, this.movieForm.value);
-      console.log(this.movie);
-      this.movieService.createmovie(this.movie)
+      this.formdata.append("name", this.movieForm.get('name')?.value);
+      this.formdata.append("description", this.movieForm.get('description')?.value);
+      this.formdata.append("image",this.movieForm.get('image')?.value);
+      this.formdata.append("category_id", this.movieForm.get('category_id')?.value);
+      // this.movie = Object.assign({}, this.movieForm.value);
+      this.movieService.createmovie(this.formdata)
     }
   }
 
