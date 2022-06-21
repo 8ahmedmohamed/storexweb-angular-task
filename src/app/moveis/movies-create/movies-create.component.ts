@@ -45,6 +45,7 @@ export class MoviesCreateComponent implements OnInit {
       // this.movie = Object.assign({}, this.movieForm.value);
       this.movieService.createmovie(this.formdata)
     }
+    this.router.navigate(['/Movies']);
   }
 
 }
